@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="height=device-height">
+<meta charset="utf-8" />
+<title>DRS Viewer</title>
+<link rel="stylesheet" type="text/css" href="css/score.css" />
+<script src="js/DRScript.js"></script>
+<script src="js/DRScore.js"></script>
+
+</head>
+<body>
+<script>
+try {
+    var params = location.search.substr(1).split("&");
+    var path = "";
+    for(var i in params) {
+        if(params[i].match(/^load=/)) {
+            path = "譜面/" + params[i].substr("load=".length) + ".js";
+            break;
+        }
+    }
+    if(path !== "") {
+        document.write("<scr" + "ipt src=\"" + path + "\"></scr" + "ipt>");
+    } else {
+        throw new Error();
+    }
+} catch(e) {
+    document.write("パラメータエラー<br>");
+}
+</script>
+<script>
+try {
+    var drScore = new DRScore(drsData.join("\r\n"));
+    var difficulty = ["DEBUT", "REGULAR", "PRO", "MASTER", "MASTER+"];
+    document.title = drScore.drs.title + " (" + difficulty[drScore.drs.difficulty] + ") ★" + drScore.drs.level;
+} catch(e) {
+    document.write("読み込みエラー");
+}
+</script>
+</body>
+</html>

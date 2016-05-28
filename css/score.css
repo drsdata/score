@@ -1,0 +1,405 @@
+
+
+* {
+padding : 0;
+margin:0;
+}
+
+html {
+    height : 100%;
+    min-height : 100%;
+}
+
+body {
+    font-family : "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    display     : inline-block;
+    min-width   : 100%;
+    height : 100%;
+    min-height : 100%;
+}
+
+button, select {
+    font-family : "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+.drscore {
+    min-height : 100%;
+}
+
+.typeall {
+    background  : #ddd;
+    background : linear-gradient(135deg, #ffb3a1, #fa92d6 20%,#d5aefd 40%, #9ddaff 60%, #c8ebc6 80%, #fbf182);
+}
+
+.typecu {
+    background  : #ffa1e0;
+}
+
+.typeco {
+    background  : #87cdff;
+}
+
+.typepa {
+    background  : #ffb32c;
+}
+
+.head {
+    color : #fff;
+}
+
+.head h1 {
+    margin : 10px;
+    font-size : 24px;
+    display : inline-block;
+}
+
+.head .info {
+display : inline-block;
+}
+
+.head .info span {
+    margin : 0 5px;
+}
+
+.board {
+    display:inline-block;
+    overflow-y : hidden;
+    padding : 8px;
+    border : 1px solid #000;
+    margin : 0 10px 10px;
+    background  : #fff;
+}
+
+.board table.col {
+    border-spacing : 5px 0;
+}
+
+.board table.col tr.col td.col {
+vertical-align: bottom;
+}
+
+.board table.col tr.col td.col table {
+  border-spacing : 0;
+}
+
+.board table.row {
+    background : #fff;
+        border : 1px solid #000;
+        border-bottom-width : 0;
+        border-left-width : 0;
+}
+
+.board table.row tr.row {
+}
+
+.board table.row tr.row th.row {
+    position : relative;
+    width : 20px;
+    font-size : 10px;
+    border : 1px solid #000;
+    border-top-width : 0;
+    border-right-width : 0;
+}
+
+.typeall .board table.row tr.row th.row {
+    background : #ffe4e4;
+}
+
+.typecu .board table.row tr.row th.row {
+    background : #ffe0ff;
+}
+.typeco .board table.row tr.row th.row {
+    background : #d5e6ff;
+}
+.typepa .board table.row tr.row th.row {
+    background : #fffd96;
+}
+
+.board table.row tr.row td.row {
+    position : relative;
+    border : 1px solid #000;
+    border-top-width : 0;
+    border-right-width : 0;
+}
+
+.board table.row tr.row td.row div.back {
+    height:100%;
+    position:relative;
+}
+
+.board span.number {
+    background-image : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAUAQMAAAAgFiiUAAAABlBMVEX/////AADrWueTAAAAAXRSTlMAQObYZgAAAEBJREFUCNd1yrEJADEQA0GDCvhWDjY1bP9dOXFwhnuxwQRaW9ZdIzjw51sT90g/RdVOklAFvFQ1+rKSENJpvDUeBMcWz2e1ZXoAAAAASUVORK5CYA==);
+    width : 4px;
+    height  : 5px;
+    display:inline-block;
+    position : absolute;
+    background-size : 40px;
+}
+
+.board div.bpm-line {
+    background : #f00;
+    width : 100%;
+    height : 1px;
+    position : absolute;
+    z-index : 60;
+}
+
+/* 同時押し線 */
+.same-line {
+    position:absolute;
+    height:1px;
+    background:#fff;
+    z-index : 20;
+    border : 1px solid #bbb;
+}
+
+/* 小節線 */
+.measure-line1 {
+    position : absolute;
+    height : 1px;
+    left : 0;
+    background : #aaa;
+    z-index : 12;
+}
+
+.measure-line2 {
+    position : absolute;
+    height : 1px;
+    left : 0;
+    background : #ddd;
+    z-index : 11;
+}
+
+.measure-line3 {
+    position : absolute;
+    width : 1px;
+    bottom : 0;
+    background : #ddd;
+    z-index : 10;
+}
+
+/* リズムアイコン */
+.board div.icon {
+    position : absolute;
+    width : 20px;
+    height : 20px;
+    background : #fff;
+    border-radius:11px;
+}
+
+.board div.all {
+    border : 1px solid #ff5050;
+}
+
+.board div.cu {
+    border : 1px solid #ff87d4;
+}
+
+.board div.co {
+    border : 1px solid #69b9ff;
+}
+
+.board div.pa {
+    border : 1px solid #ff890b;
+}
+
+.board div.allline {
+    border-top-width : 0;
+    border-bottom-width : 0;
+    position : absolute;
+    width : 12px;
+    background : #ff5050;
+    /*background : linear-gradient( 135deg, #ffb3a1, #fa92d6 20%,#d5aefd 40%, #9ddaff 60%, #c8ebc6 80%, #fbf182 );*/
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.culine {
+    border-top-width : 0;
+    border-bottom-width : 0;
+    position : absolute;
+    width : 12px;
+    background : #ff87d4;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.coline {
+    border-top-width : 0;
+    border-bottom-width : 0;
+    position : absolute;
+    width : 12px;
+    background : #69b9ff;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.paline {
+    border-top-width : 0;
+    border-bottom-width : 0;
+    position : absolute;
+    width : 12px;
+    background : #ff890b;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.all-slide-line {
+    position : absolute;
+    width : 7px;
+    background : #ff5050;
+    /*background : linear-gradient( 0deg, #ffb3a1, #fa92d6 20%,#d5aefd 40%, #9ddaff 60%, #c8ebc6 80%, #fbf182 );*/
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.cu-slide-line {
+    position : absolute;
+    width : 7px;
+    background : #ff87d4;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.co-slide-line {
+    position : absolute;
+    width : 7px;
+    background : #69b9ff;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.pa-slide-line {
+    position : absolute;
+    width : 7px;
+    background : #ff890b;
+    opacity : 0.7;
+    z-index : 50;
+}
+
+.board div.icon > div {
+    position : absolute;
+    width:16px;
+    height:16px;
+    margin:2px;
+    box-sizing:border-box;border-radius:9px;
+}
+
+.board div.all > div {
+    background:#ff5050;
+    /*background : linear-gradient( 135deg, #fd6252, #eb43ac 20%,#9669fa 40%, #50aef8 60%, #92d27f 80%, #f0db31 );*/
+}
+
+.board div.cu > div {
+    background:#ff87d4;
+}
+
+.board div.co > div {
+    background:#69b9ff;
+}
+
+.board div.pa > div {
+    background:#ff890b;
+}
+
+.board div.icon > div > div.long {
+    position : absolute;
+    width:8px;
+    height:8px;
+    margin:4px;
+    box-sizing:border-box;border-radius:9px;
+    background : #fff;
+}
+
+.board div.icon > div > div.slide {
+  position:absolute;
+  width:0;
+  height:0;
+  border: 8px solid transparent;
+  border-bottom-color: #fff;
+  top : 0px;
+}
+
+.board div.icon > div > div.right {
+left : 8px;
+  -webkit-transform : rotate(90deg);
+  transform : rotate(90deg);
+}
+
+.board div.icon > div > div.left {
+    left : -8px;
+  -webkit-transform : rotate(-90deg);
+  transform : rotate(-90deg);
+}
+
+.board div.icon > div > div.slide::after {
+  position: absolute;
+  content: '';
+  top: 6px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+
+/* 設定 */
+.setting {
+    position : relative;
+    padding : 0 10px 15px;
+}
+
+.setting li {
+    list-style : none;
+}
+
+.setting > input[type=checkbox] {
+    display : none;
+}
+
+.setting > input[type=checkbox] + label + div.mainboard  {
+    padding : 10px;
+    background : #fff;
+    border : 1px solid #666;
+    position : absolute;
+    bottom : 60px;
+    z-index : 9999;
+    line-height: 40px;
+    -webkit-transform-origin : left bottom;
+    -webkit-transform : scale(0.5);
+    transform-origin : left bottom;
+    transform : scale(0.1);
+    transition : all 0.3s ;
+    opacity : 0.0;
+}
+
+.setting > input[type=checkbox] + label {
+    background : #fff;
+    display : inline-block;
+    line-height: 40px;
+    text-align:center;
+    width : 140px;
+    height : 40px;
+    border : 1px solid #666;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor : pointer;
+    transition : 0.3s all;
+}
+.setting > input[type=checkbox]:checked + label {
+    background : #ddd;
+}
+
+input[type=checkbox]:checked + label ~ div.mainboard {
+    -webkit-transform : scale(1.0);
+    transform : scale(1.0);
+    opacity : 1.0;
+}
+
+.setting div.mainboard select {
+    font-size : 18px;
+    width : 90px;
+    margin-left : 10px;
+    cursor : pointer;
+}

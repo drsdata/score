@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+* {
+  margin    : 0;
+  padding   : 0;
+  font-size : 100%;
+}
+
+body {
+    margin : 10px;
+  font-family : "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+a {
+    text-decoration : none;
+}
+
+fieldset {
+    padding : 5px;
+    border : 2px solid #000;
+    border-radius : 8px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h2 {
+    margin-bottom : 10px;
+     border : 3px dotted #000;
+     border-width : 0 0 3px;
+}
+
+h2 .heading-dotted > div {
+    float:left;border : 3px dotted #000;
+    border-width : 0 0 0 3px;
+    display:inline-block;
+    height:21px;
+    padding-left:3px;
+}
+
+h2::after {
+    content : "";
+    display:block;
+    clear:both;
+}
+
+@media (min-width :1px) {
+    input[type="checkbox"],
+    input[type="radio"] {
+        display : none;
+    }
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        padding-left : 28px;
+        padding-right : 10px;
+        position : relative;
+        display : inline-block;
+        cursor : pointer;
+    }
+    input[type="checkbox"] + label:nth-last-child(1),
+    input[type="radio"] + label:nth-last-child(1) {
+        padding-right : 0px;
+    }
+
+    input[type="checkbox"] + label::before,
+    input[type="radio"] + label::before {
+        content : "";
+        width : 20px;
+        height : 20px;
+        display : block;
+        position : absolute;
+        background : #fff;
+        border : 2px solid #666;
+        left : 0;
+        top : 0;
+    }
+
+    input[type="radio"] + label::before {
+        border-radius : 12px;
+    }
+
+    input[type="checkbox"]:checked + label::after,
+    input[type="radio"]:checked + label::after {
+        content : "";
+        display : block;
+        position : absolute;
+    }
+
+    input[type="checkbox"]:checked + label::after {
+        width : 15px;
+        height : 7px;
+        border-left : 3px solid #333;
+        border-bottom : 3px solid #333;
+        left : 3px;
+        top : 5px;
+        -webkit-transform : rotate(-45deg);
+        transform : rotate(-45deg);
+    }
+
+    input[type="radio"]:checked + label::after {
+        width : 12px;
+        height : 12px;
+        border-radius : 7px;
+        background : #666;
+        left : 6px;
+        top : 6px;
+    }
+}
+
+table tr td.row  {
+    padding : 5px;
+    border-radius : 5px;
+    background : #fff;
+    border : 2px solid #333;
+}
+
+table tr td.co  {
+    background : linear-gradient(315deg,#F3FCFF, #A9DFFF);
+}
+
+table tr td.cu  {
+    background : linear-gradient(315deg,#FFECF5, #FFB8ED);
+}
+
+table tr td.pa  {
+    background : linear-gradient(315deg,#F9FF9A, #FFED93);
+}
+
+table tr td.all  {
+    background : linear-gradient(135deg,#BCECFF, #D8FFD4, #FFFDC3, #FBFFC5, #C4ECFF, #FAE1FF, #FFF2FD);
+}
+
+table tr td.row table {
+    width : 100%;
+    border-spacing : 20px 0;
+}
+
+table tr td.row table tr th {
+}
+
+table tr td.row table tr td {
+    width : 60px;
+    height : 60px;
+    position : relative;
+}
+
+div.icon {
+    box-sizing : border-box;
+    width : 60px;
+    height : 60px;
+    font-size : 12px;
+    font-weight : bold;
+    position : relative;
+    text-align : center;
+    line-height : 60px;
+    background : #ddd;
+    border-radius : 30px;
+    color : #fff;
+    box-shadow :
+		-1px -1px 1px #000,
+		1px -1px 1px #000,
+		-1px 4px 4px #000,
+		1px 4px 4px #000;
+        transition : all 0.4s;
+}
+
+div.icon:hover {
+    transform : translateY(-5px);
+}
+
+table tr td.row table tr td:nth-of-type(1) div.icon{
+    background : linear-gradient(135deg, #A2DDFF, #fff);
+	text-shadow:
+		-1px -1px 2px #4CBDFF,
+		1px -1px 2px #4CBDFF,
+		-1px 1px 2px #4CBDFF,
+		1px 1px 2px #4CBDFF;
+}
+
+table tr td.row table tr td:nth-of-type(2) div.icon{
+    background : linear-gradient(135deg, #FFD745, #fff);
+	text-shadow:
+		-1px -1px 2px #D0B600,
+		1px -1px 2px #D0B600,
+		-1px 1px 2px #D0B600,
+		1px 1px 2px #D0B600;
+}
+
+table tr td.row table tr td:nth-of-type(3) div.icon{
+    background : linear-gradient(135deg, #FF73B4, #fff);
+	text-shadow:
+		-1px -1px 2px #FF4D9F,
+		1px -1px 2px #FF4D9F,
+		-1px 1px 2px #FF4D9F,
+		1px 1px 2px #FF4D9F;
+}
+
+table tr td.row table tr td:nth-of-type(4) div.icon{
+    background : linear-gradient(135deg, #FFFCA2, #FFD6E7, #A0E8FF, #B6FFBF);
+	text-shadow:
+		-1px -1px 2px #CE99FF,
+		1px -1px 2px #CE99FF,
+		-1px 1px 2px #CE99FF,
+		1px 1px 2px #CE99FF;
+}
+
+table tr td.row table tr td:nth-of-type(5) div.icon{
+    background : linear-gradient(135deg, #FFBC00, #FFC31D, #FBFF59, #FFFFFF, #FAE789);
+	text-shadow:
+		-1px -1px 2px #B1665B,
+		1px -1px 2px #B1665B,
+		-1px 1px 2px #B1665B,
+		1px 1px 2px #B1665B;
+}
+
+div.level {
+    box-sizing : border-box;
+    width : 34px;
+    height : 12px;
+    font-size : 10px;
+    line-height : 12px;
+    position : absolute;
+    top : 4px;
+    right : -3px;
+    background : #ddd;
+    border : 1px solid #000;
+	text-shadow:none;
+}
+
+div.combo {
+    box-sizing : border-box;
+    width : 68px;
+    height : 16px;
+    font-size : 10px;
+    line-height : 16px;
+    position : absolute;
+    bottom : 1px;
+    right : -4px;
+    background : #ddd;
+    border : 1px solid #000;
+	text-shadow:none;
+}
+
+table tr td.row table tr td:nth-of-type(1) div {
+    background : #82D5FF;
+}
+
+table tr td.row table tr td:nth-of-type(2) div {
+    background : #FFC800;
+}
+
+table tr td.row table tr td:nth-of-type(3) div {
+    background : #FF8792;
+}
+
+table tr td.row table tr td:nth-of-type(4) div {
+    background : #CE99FF;
+}
+
+table tr td.row table tr td:nth-of-type(5) div {
+    background : #FFA655;
+}
