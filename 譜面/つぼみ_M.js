@@ -4,7 +4,7 @@ var drsData = [
 "#OFFSET:0",
 "#TYPE:ALL",
 "#DIFFICULTY:MASTER",
-"#LEVEL:25",
+"#LEVEL:26",
 "#BPM:01,0.00000,117.00000",
 "#MEASURE:01,4,4",
 "02,0.00000,1,5,5,00",
