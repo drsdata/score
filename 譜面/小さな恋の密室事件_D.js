@@ -1,6 +1,6 @@
 var drsData = [
-"#TITLE:�����ȗ��̖�������",
-"#SOUND:�����ȗ��̖�������.mp3",
+"#TITLE:小さな恋の密室事件",
+"#SOUND:小さな恋の密室事件.mp3",
 "#OFFSET:0",
 "#TYPE:CO",
 "#DIFFICULTY:DEBUT",
